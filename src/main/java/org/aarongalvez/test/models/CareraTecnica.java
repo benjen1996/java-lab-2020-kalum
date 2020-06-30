@@ -59,6 +59,10 @@ public class CareraTecnica implements Serializable {
     public void setNombreCarrera(String nombreCarrera) {
         this.nombreCarrera.set(nombreCarrera);
     }
+    public String toString()
+    {
+        return this.getNombreCarrera();
+    }
 
     public StringProperty nombreCarrera() {
         return this.nombreCarrera;

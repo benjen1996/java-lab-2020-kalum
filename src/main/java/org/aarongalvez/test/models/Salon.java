@@ -63,6 +63,10 @@ public class Salon implements Serializable {
     public StringProperty nombreSalon() {
         return this.nombreSalon;
     }
+    public String toString()
+    {
+        return this.getNombreSalon();
+    }
 
     @Column(name = "descripcion")
     public String getDescripcion() {

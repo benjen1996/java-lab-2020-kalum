@@ -1,6 +1,8 @@
 package org.aarongalvez.test.models;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -79,6 +81,11 @@ public class Horario implements Serializable {
 
     public ObjectProperty<Date> horarioFinal() {
         return this.horarioFinal;
+    }
+    public String toString()
+    {
+        DateFormat horario = new SimpleDateFormat("HH:mm");
+        return horario.format(this.getHorarioInicio()) + " - " + horario.format(this.getHorarioFinal());
     }
 
     @OneToMany(mappedBy = "horario", fetch = FetchType.EAGER)

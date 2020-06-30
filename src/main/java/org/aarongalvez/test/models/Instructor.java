@@ -80,6 +80,10 @@ public class Instructor implements Serializable {
     public StringProperty nombres() {
         return this.nombres;
     }
+    public String toString()
+    {
+        return this.getApellidos()+" "+ this.getNombres();
+    }
 
     @Column(name = "direccion")
     public String getDireccion() {

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import org.aarongalvez.test.controllers.VentanaSalonAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaCareraAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaCarreraTecnicaController;
+import org.aarongalvez.test.controllers.VentanaClaseAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaClaseController;
 import org.aarongalvez.test.controllers.VentanaHorarioController;
 import org.aarongalvez.test.controllers.VentanaInstructorAddUpdateController;
@@ -169,9 +170,20 @@ public class App extends Application {
 
     public void mostrarVentanaClase() {
         try {
-            VentanaClaseController ventanaClaseView = (VentanaClaseController) cambiarEscena("ClaseView.fxml", 781,
-                    519);
+            VentanaClaseController ventanaClaseView = 
+                    (VentanaClaseController) cambiarEscena("ClaseView.fxml", 781,519);
             ventanaClaseView.setDirectorEscenas(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaClaseAddUpdate() {
+        try {
+            VentanaClaseAddUpdateController ventanaClaseAddUpdate = 
+                (VentanaClaseAddUpdateController) cambiarEscena("VentanaClaseAddUpdate.fxml", 570, 545);
+            ventanaClaseAddUpdate.setDirectorEscenas(this);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

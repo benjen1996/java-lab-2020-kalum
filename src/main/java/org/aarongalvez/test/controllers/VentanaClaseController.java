@@ -41,6 +41,7 @@ public class VentanaClaseController implements Initializable {
     private ObservableList<Clase> listaClases;
 
     private App directorEscenas;
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -68,6 +69,12 @@ public class VentanaClaseController implements Initializable {
     public void mostrarVentanaPrincipal() {
         this.directorEscenas.mostrarVentanaPrincipal();
     }
+
+    public void mostrarVentanaClaseAddUpdate()
+    {
+        this.directorEscenas.mostrarVentanaClaseAddUpdate();
+    }
+
 
     public App getDirectorEscenas() {
         return directorEscenas;

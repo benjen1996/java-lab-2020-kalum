@@ -27,9 +27,9 @@ public class VentanaHorarioController implements Initializable {
     @FXML
     private TableView<Horario> tblHorario;
     @FXML
-    private TableColumn<Horario, Date> colHorarioInicio;
+    private TableColumn<Horario, String> colHorarioInicio;
     @FXML
-    private TableColumn<Horario, Date> ColHorarioFInal;
+    private TableColumn<Horario, String> ColHorarioFInal;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,8 +39,8 @@ public class VentanaHorarioController implements Initializable {
                 .observableArrayList((List<Horario>) Conexion.getInstancia().findAll("Horario.findAll"));
         this.tblHorario.setItems(listaHorarios);
 
-        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio -> cellHorarioInicio.getValue().horarioInicio());
-        this.ColHorarioFInal.setCellValueFactory(cellHorarioFinal -> cellHorarioFinal.getValue().horarioFinal());
+        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio -> new ReadOnlyStringWrapper(horario.format(cellHorarioInicio.getValue().getHorarioInicio())));
+        this.ColHorarioFInal.setCellValueFactory(cellHorarioFinal ->new ReadOnlyStringWrapper(horario.format(cellHorarioFinal.getValue().getHorarioFinal())));
     }
 
     public App getDirectorEscenas() {
