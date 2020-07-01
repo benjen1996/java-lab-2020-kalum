@@ -32,8 +32,6 @@ public class Horario implements Serializable {
     private final ObjectProperty<Date> horarioFinal;
     private List<Clase> clases;
 
-    
-
     public Horario() {
         this.horarioId = new SimpleStringProperty();
         this.horarioInicio = new SimpleObjectProperty<Date>();
@@ -68,7 +66,6 @@ public class Horario implements Serializable {
         return this.horarioInicio;
     }
 
-    
     @Column(name = "horario_final")
     @Temporal(value = TemporalType.TIME) // para setear que solo se guarde el tiempo
     public Date getHorarioFinal() {
@@ -82,8 +79,8 @@ public class Horario implements Serializable {
     public ObjectProperty<Date> horarioFinal() {
         return this.horarioFinal;
     }
-    public String toString()
-    {
+
+    public String toString() {
         DateFormat horario = new SimpleDateFormat("HH:mm");
         return horario.format(this.getHorarioInicio()) + " - " + horario.format(this.getHorarioFinal());
     }

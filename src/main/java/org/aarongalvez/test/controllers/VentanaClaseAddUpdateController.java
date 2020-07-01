@@ -50,43 +50,77 @@ public class VentanaClaseAddUpdateController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        carrerasTecnicas = FXCollections.observableArrayList
-        ((List<CareraTecnica>)Conexion.getInstancia().findAll("CareraTecnica.findAll"));
+        carrerasTecnicas = FXCollections
+                .observableArrayList((List<CareraTecnica>) Conexion.getInstancia().findAll("CareraTecnica.findAll"));
         this.cmbCarreraTecnica.setItems(carrerasTecnicas);
-        instructores = FXCollections.observableArrayList((List<Instructor>)Conexion.getInstancia().findAll("Instructor.findAll"));
+        instructores = FXCollections
+                .observableArrayList((List<Instructor>) Conexion.getInstancia().findAll("Instructor.findAll"));
         this.cmbInstructor.setItems(instructores);
-        horarios = FXCollections.observableArrayList((List<Horario>)Conexion.getInstancia().findAll("Horario.findAll"));
+        horarios = FXCollections
+                .observableArrayList((List<Horario>) Conexion.getInstancia().findAll("Horario.findAll"));
         this.cmbHorario.setItems(horarios);
-        salones = FXCollections.observableArrayList((List<Salon>)Conexion.getInstancia().findAll("Salon.findAll"));
+        salones = FXCollections.observableArrayList((List<Salon>) Conexion.getInstancia().findAll("Salon.findAll"));
         this.cmbSalon.setItems(salones);
 
     }
 
-    public void agregar()
-    {
-        if (clase == null) {
-            clase = new Clase();
-            clase.setClaseId(UUID.randomUUID().toString());
-            clase.setDescripcion(txtDescripcion.getText());
-            clase.setCupoMaximo(Integer.parseInt(txtCupoMax.getText()));
-            clase.setCupoMinimo(Integer.parseInt(txtCupoMin.getText()));
-            clase.setCiclo(Integer.parseInt(txtCiclo.getText()));
-            clase.setCarrera(this.cmbCarreraTecnica.getSelectionModel().getSelectedItem());
-            clase.setInstructor(this.cmbInstructor.getSelectionModel().getSelectedItem());
-            clase.setHorario(this.cmbHorario.getSelectionModel().getSelectedItem());
-            clase.setSalon(this.cmbSalon.getSelectionModel().getSelectedItem());
-            Conexion.getInstancia().agregar(clase);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Carera");
+    public void guardar() {
+
+        if (cmbCarreraTecnica.getSelectionModel().isEmpty() || txtDescripcion.getText().isEmpty()
+                || Integer.parseInt(txtCupoMax.getText()) <= 0 || Integer.parseInt(txtCupoMin.getText()) <= 0
+                || Integer.parseInt(txtCiclo.getText()) <= 0 || cmbHorario.getSelectionModel().isEmpty()
+                || cmbInstructor.getSelectionModel().isEmpty() || cmbSalon.getSelectionModel().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Clase");
             alert.setHeaderText(null);
-            alert.setContentText("Registo Modificado Correctamente");
+            alert.setContentText("Error, Todos los campos tienen que ser llenados para continuar");
             alert.initOwner(null);
             alert.show();
-            this.directorEscenas.mostrarVentanaClase();
 
+        } else {
+            if (clase != null) {
+
+                clase.setDescripcion(txtDescripcion.getText());
+                clase.setCupoMaximo(Integer.parseInt(txtCupoMax.getText()));
+                clase.setCupoMinimo(Integer.parseInt(txtCupoMin.getText()));
+                clase.setCiclo(Integer.parseInt(txtCiclo.getText()));
+                clase.setCarrera(this.cmbCarreraTecnica.getSelectionModel().getSelectedItem());
+                clase.setInstructor(this.cmbInstructor.getSelectionModel().getSelectedItem());
+                clase.setHorario(this.cmbHorario.getSelectionModel().getSelectedItem());
+                clase.setSalon(this.cmbSalon.getSelectionModel().getSelectedItem());
+                Conexion.getInstancia().modificar(clase);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Clase");
+                alert.setHeaderText(null);
+                alert.setContentText("Registo Modificado Correctamente");
+                alert.initOwner(null);
+                alert.show();
+                this.directorEscenas.mostrarVentanaSalon();
+
+            } else {
+                clase = new Clase();
+                clase.setClaseId(UUID.randomUUID().toString());
+                clase.setDescripcion(txtDescripcion.getText());
+                clase.setCupoMaximo(Integer.parseInt(txtCupoMax.getText()));
+                clase.setCupoMinimo(Integer.parseInt(txtCupoMin.getText()));
+                clase.setCiclo(Integer.parseInt(txtCiclo.getText()));
+                clase.setCarrera(this.cmbCarreraTecnica.getSelectionModel().getSelectedItem());
+                clase.setInstructor(this.cmbInstructor.getSelectionModel().getSelectedItem());
+                clase.setHorario(this.cmbHorario.getSelectionModel().getSelectedItem());
+                clase.setSalon(this.cmbSalon.getSelectionModel().getSelectedItem());
+                Conexion.getInstancia().agregar(clase);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Clase");
+                alert.setHeaderText(null);
+                alert.setContentText("Registo Modificado Correctamente");
+                alert.initOwner(null);
+                alert.show();
+                this.directorEscenas.mostrarVentanaClase();
+            }
         }
-    }
 
+    }
 
     public void cancelar() {
         this.directorEscenas.mostrarVentanaClase();
@@ -98,6 +132,23 @@ public class VentanaClaseAddUpdateController implements Initializable {
 
     public void setDirectorEscenas(App directorEscenas) {
         this.directorEscenas = directorEscenas;
+    }
+
+    public Clase getClase() {
+        return clase;
+    }
+
+    public void setClase(Clase clase) {
+        this.clase = clase;
+        this.cmbCarreraTecnica.setItems(carrerasTecnicas);
+        this.txtDescripcion.setText(clase.getDescripcion());
+        this.txtCupoMax.setText(String.valueOf(clase.getCupoMaximo()));
+        this.txtCupoMin.setText(String.valueOf(clase.getCupoMinimo()));
+        this.txtCiclo.setText(String.valueOf(clase.getCiclo()));
+        this.cmbInstructor.setItems(instructores);
+        this.cmbHorario.setItems(horarios);
+        this.cmbSalon.setItems(salones);
+
     }
 
 }

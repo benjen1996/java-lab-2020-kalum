@@ -21,7 +21,6 @@ public class VentanaCareraAddUpdateController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
     }
 
     public void cancelar() {
@@ -82,6 +81,5 @@ public class VentanaCareraAddUpdateController implements Initializable {
         this.txtNombreCarrera.setText(carera.getNombreCarrera());
 
     }
-
 
 }

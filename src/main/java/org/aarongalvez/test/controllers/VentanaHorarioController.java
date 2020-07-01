@@ -3,7 +3,6 @@ package org.aarongalvez.test.controllers;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -34,13 +33,15 @@ public class VentanaHorarioController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         DateFormat horario = new SimpleDateFormat("HH:mm");
-        
+
         listaHorarios = FXCollections
                 .observableArrayList((List<Horario>) Conexion.getInstancia().findAll("Horario.findAll"));
         this.tblHorario.setItems(listaHorarios);
 
-        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio -> new ReadOnlyStringWrapper(horario.format(cellHorarioInicio.getValue().getHorarioInicio())));
-        this.ColHorarioFInal.setCellValueFactory(cellHorarioFinal ->new ReadOnlyStringWrapper(horario.format(cellHorarioFinal.getValue().getHorarioFinal())));
+        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio -> new ReadOnlyStringWrapper(
+                horario.format(cellHorarioInicio.getValue().getHorarioInicio())));
+        this.ColHorarioFInal.setCellValueFactory(cellHorarioFinal -> new ReadOnlyStringWrapper(
+                horario.format(cellHorarioFinal.getValue().getHorarioFinal())));
     }
 
     public App getDirectorEscenas() {

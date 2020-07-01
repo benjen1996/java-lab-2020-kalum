@@ -14,6 +14,7 @@ import org.aarongalvez.test.controllers.VentanaInstructorController;
 import org.aarongalvez.test.controllers.VentanaPrincipalController;
 import org.aarongalvez.test.controllers.VentanaSalonController;
 import org.aarongalvez.test.models.CareraTecnica;
+import org.aarongalvez.test.models.Clase;
 import org.aarongalvez.test.models.Instructor;
 import org.aarongalvez.test.models.Salon;
 
@@ -188,6 +189,19 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
+    public void mostrarVentanaClaseAddUpdate(Clase clase) {
+        try {
+            VentanaClaseAddUpdateController ventanaClaseAddUpdate = 
+                (VentanaClaseAddUpdateController) cambiarEscena("VentanaClaseAddUpdate.fxml", 570, 545);
+            ventanaClaseAddUpdate.setDirectorEscenas(this);
+            ventanaClaseAddUpdate.setClase(clase);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+   
 
     public Initializable cambiarEscena(String escena, int ancho, int alto) throws IOException {
         Initializable resultado = null;

@@ -33,14 +33,19 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <Button layoutX="339.0" layoutY="432.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="103.0" text="Modificar">
+      <Button layoutX="149.0" layoutY="432.0" mnemonicParsing="false" onAction="#modificar" prefHeight="49.0" prefWidth="103.0" text="Modificar">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="46.0" layoutY="432.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseAddUpdate" prefHeight="49.0" prefWidth="103.0" text="Agregar">
+      <Button layoutX="24.0" layoutY="432.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseAddUpdate" prefHeight="49.0" prefWidth="103.0" text="Agregar">
          <font>
             <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="270.0" layoutY="432.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="49.0" prefWidth="103.0" text="Eliminar">
+         <font>
+            <Font size="16.0" />
          </font>
       </Button>
    </children>

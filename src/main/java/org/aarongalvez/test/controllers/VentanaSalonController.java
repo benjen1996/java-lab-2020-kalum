@@ -74,4 +74,25 @@ public class VentanaSalonController implements Initializable {
         }
     }
 
+    public void eliminar() {
+        if (this.tblSalon.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Salon");
+            alert.setHeaderText(null);
+            alert.setContentText("Debe Seleccionar un Elemento ");
+            alert.initOwner(null);
+            alert.show();
+        } else {
+            Salon salon = this.tblSalon.getSelectionModel().getSelectedItem();
+            Conexion.getInstancia().eliminar(salon);
+            this.directorEscenas.mostrarVentanaSalon();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Salon");
+            alert.setHeaderText(null);
+            alert.setContentText("Debe Seleccionar un Elemento ");
+            alert.initOwner(null);
+            alert.show();
+        }
+    }
+
 }
