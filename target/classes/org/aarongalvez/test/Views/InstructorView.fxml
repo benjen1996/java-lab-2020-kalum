@@ -30,14 +30,19 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Button>
-      <Button layoutX="270.0" layoutY="334.0" mnemonicParsing="false" onAction="#modificar" prefHeight="52.0" prefWidth="101.0" text="Modificar">
+      <Button layoutX="132.0" layoutY="334.0" mnemonicParsing="false" onAction="#modificar" prefHeight="52.0" prefWidth="101.0" text="Modificar">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="23.0" layoutY="334.0" mnemonicParsing="false" onAction="#mostrarVentanaInstructorAddUpdate" prefHeight="52.0" prefWidth="101.0" text="Nuevo">
+      <Button layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#mostrarVentanaInstructorAddUpdate" prefHeight="52.0" prefWidth="101.0" text="Nuevo">
          <font>
             <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="250.0" layoutY="334.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="52.0" prefWidth="101.0" text="Eliminar">
+         <font>
+            <Font name="System Bold" size="15.0" />
          </font>
       </Button>
     </children>

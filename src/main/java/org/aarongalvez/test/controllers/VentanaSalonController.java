@@ -89,7 +89,7 @@ public class VentanaSalonController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Salon");
             alert.setHeaderText(null);
-            alert.setContentText("Debe Seleccionar un Elemento ");
+            alert.setContentText("Dato eliminado correctamente");
             alert.initOwner(null);
             alert.show();
         }
