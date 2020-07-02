@@ -7,25 +7,21 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.aarongalvez.test.controllers.VentanaCareraAddUpdateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.aarongalvez.test.controllers.VentanaCareraAddUpdateController">
     <children>
-        <Label layoutX="32.0" layoutY="24.0" prefHeight="40.0" prefWidth="131.0" text="Titulo">
+        <Label layoutX="32.0" layoutY="24.0" prefHeight="40.0" prefWidth="211.0" text="Carrera Tecnica">
             <font>
-                <Font size="26.0"/>
+                <Font name="System Bold" size="26.0" />
             </font>
         </Label>
-        <Button layoutX="432.0" layoutY="324.0" mnemonicParsing="false" onAction="#guardar" prefHeight="47.0"
-                prefWidth="79.0" text="Guardar"/>
-        <Button layoutX="541.0" layoutY="324.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="47.0"
-                prefWidth="79.0" text="Cancelar"/>
-        <TextField fx:id="txtNombreCarrera" layoutX="143.0" layoutY="175.0" prefHeight="25.0" prefWidth="467.0"/>
+        <Button layoutX="432.0" layoutY="324.0" mnemonicParsing="false" onAction="#guardar" prefHeight="47.0" prefWidth="79.0" text="Guardar" />
+        <Button layoutX="541.0" layoutY="324.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="47.0" prefWidth="79.0" text="Cancelar" />
+        <TextField fx:id="txtNombreCarrera" layoutX="143.0" layoutY="175.0" prefHeight="25.0" prefWidth="467.0" />
         <Label layoutX="41.0" layoutY="174.0" prefHeight="27.0" prefWidth="102.0" text="Nombre">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
-        <Line endX="424.0" layoutX="216.0" layoutY="82.0" startX="-216.0" strokeWidth="8.0"/>
+        <Line endX="424.0" layoutX="216.0" layoutY="82.0" startX="-216.0" strokeWidth="8.0" />
     </children>
 </AnchorPane>
