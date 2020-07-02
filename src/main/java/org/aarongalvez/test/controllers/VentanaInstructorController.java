@@ -67,29 +67,30 @@ public class VentanaInstructorController implements Initializable {
             this.directorEscenas.mostrarVentanaInstructorAddUpdate(instructor);
         }
     }
-    public void eliminar()
-    {
+
+    public void eliminar() {
         if (this.tblInstructor.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Salon");
+            alert.setTitle("Insructor");
             alert.setHeaderText(null);
             alert.setContentText("Debe Seleccionar un Elemento ");
             alert.initOwner(null);
             alert.show();
-            
+
         } else {
             Instructor instructor = this.tblInstructor.getSelectionModel().getSelectedItem();
             Conexion.getInstancia().eliminar(instructor);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Clase");
+            alert.setTitle("Instructor");
             alert.setHeaderText(null);
             alert.setContentText("Clase Eliminada correctamente ");
             alert.initOwner(null);
             alert.show();
             this.directorEscenas.mostrarVentanaInstructor();
         }
-        
+
     }
+
     public App getDirectorEscenas() {
         return directorEscenas;
     }

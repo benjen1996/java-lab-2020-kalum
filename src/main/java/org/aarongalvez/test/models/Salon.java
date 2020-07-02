@@ -63,8 +63,8 @@ public class Salon implements Serializable {
     public StringProperty nombreSalon() {
         return this.nombreSalon;
     }
-    public String toString()
-    {
+
+    public String toString() {
         return this.getNombreSalon();
     }
 

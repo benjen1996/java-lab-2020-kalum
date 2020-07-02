@@ -44,7 +44,7 @@ public class VentanaSalonAddUpdateController implements Initializable {
             alert.show();
         } else {
             if (salon != null) {
-                
+
                 salon.setNombreSalon(txtSalon.getText());
                 salon.setDescripcion(txtDescripcion.getText());
                 salon.setCapacidad(Integer.parseInt(txtCapacidad.getText()));
@@ -58,7 +58,7 @@ public class VentanaSalonAddUpdateController implements Initializable {
                 this.directorEscenas.mostrarVentanaSalon();
 
             } else {
-                salon = new Salon();  
+                salon = new Salon();
                 salon.setSalonId(UUID.randomUUID().toString());
                 salon.setNombreSalon(txtSalon.getText());
                 salon.setDescripcion(txtDescripcion.getText());

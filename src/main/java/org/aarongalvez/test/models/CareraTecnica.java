@@ -17,13 +17,12 @@ import javafx.beans.property.StringProperty;
 
 @Entity
 @Table(name = "carrera_tecnica")
-@NamedQueries({@NamedQuery(name = "CareraTecnica.findAll", query = "select ct from CareraTecnica ct")})
+@NamedQueries({ @NamedQuery(name = "CareraTecnica.findAll", query = "select ct from CareraTecnica ct") })
 public class CareraTecnica implements Serializable {
 
     private final StringProperty carreraId;
     private final StringProperty nombreCarrera;
     private List<Clase> clases;
-
 
     public CareraTecnica() {
         this.carreraId = new SimpleStringProperty();
@@ -59,15 +58,14 @@ public class CareraTecnica implements Serializable {
     public void setNombreCarrera(String nombreCarrera) {
         this.nombreCarrera.set(nombreCarrera);
     }
-    public String toString()
-    {
+
+    public String toString() {
         return this.getNombreCarrera();
     }
 
     public StringProperty nombreCarrera() {
         return this.nombreCarrera;
     }
-
 
     @OneToMany(mappedBy = "carrera", fetch = FetchType.EAGER)
     public List<Clase> getClases() {

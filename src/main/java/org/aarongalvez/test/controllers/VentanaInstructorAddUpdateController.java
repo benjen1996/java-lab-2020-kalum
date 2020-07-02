@@ -65,9 +65,8 @@ public class VentanaInstructorAddUpdateController implements Initializable {
                 alert.initOwner(null);
                 alert.show();
                 this.directorEscenas.mostrarVentanaInstructor();
-            }else
-            {
-                instructor =  new Instructor();
+            } else {
+                instructor = new Instructor();
                 instructor.setInstructorId(UUID.randomUUID().toString());
                 instructor.setApellidos(txtApellidos.getText());
                 instructor.setNombres(txtNombres.getText());

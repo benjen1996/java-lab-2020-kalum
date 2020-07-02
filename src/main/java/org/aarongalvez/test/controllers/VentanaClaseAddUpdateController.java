@@ -96,7 +96,7 @@ public class VentanaClaseAddUpdateController implements Initializable {
                 alert.setContentText("Registo Modificado Correctamente");
                 alert.initOwner(null);
                 alert.show();
-                this.directorEscenas.mostrarVentanaSalon();
+                this.directorEscenas.mostrarVentanaClase();
 
             } else {
                 clase = new Clase();
@@ -113,7 +113,7 @@ public class VentanaClaseAddUpdateController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Clase");
                 alert.setHeaderText(null);
-                alert.setContentText("Registo Modificado Correctamente");
+                alert.setContentText("Registo agregado Correctamente");
                 alert.initOwner(null);
                 alert.show();
                 this.directorEscenas.mostrarVentanaClase();
@@ -140,15 +140,14 @@ public class VentanaClaseAddUpdateController implements Initializable {
 
     public void setClase(Clase clase) {
         this.clase = clase;
-        this.cmbCarreraTecnica.setItems(carrerasTecnicas);
+        this.cmbCarreraTecnica.getSelectionModel().select(clase.getCarrera());
         this.txtDescripcion.setText(clase.getDescripcion());
         this.txtCupoMax.setText(String.valueOf(clase.getCupoMaximo()));
         this.txtCupoMin.setText(String.valueOf(clase.getCupoMinimo()));
         this.txtCiclo.setText(String.valueOf(clase.getCiclo()));
-        this.cmbInstructor.setItems(instructores);
-        this.cmbHorario.setItems(horarios);
-        this.cmbSalon.setItems(salones);
-
+        this.cmbInstructor.getSelectionModel().select(clase.getInstructor());
+        this.cmbHorario.getSelectionModel().select(clase.getHorario());
+        this.cmbSalon.getSelectionModel().select(clase.getSalon());
     }
 
 }

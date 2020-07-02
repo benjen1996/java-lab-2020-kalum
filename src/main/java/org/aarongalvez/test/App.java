@@ -8,6 +8,7 @@ import org.aarongalvez.test.controllers.VentanaCareraAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaCarreraTecnicaController;
 import org.aarongalvez.test.controllers.VentanaClaseAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaClaseController;
+import org.aarongalvez.test.controllers.VentanaHorarioAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaHorarioController;
 import org.aarongalvez.test.controllers.VentanaInstructorAddUpdateController;
 import org.aarongalvez.test.controllers.VentanaInstructorController;
@@ -15,6 +16,7 @@ import org.aarongalvez.test.controllers.VentanaPrincipalController;
 import org.aarongalvez.test.controllers.VentanaSalonController;
 import org.aarongalvez.test.models.CareraTecnica;
 import org.aarongalvez.test.models.Clase;
+import org.aarongalvez.test.models.Horario;
 import org.aarongalvez.test.models.Instructor;
 import org.aarongalvez.test.models.Salon;
 
@@ -169,10 +171,32 @@ public class App extends Application {
         }
     }
 
+    public void mostrarVentanaHorarioAddUpdate() {
+        try {
+            VentanaHorarioAddUpdateController ventanaHorarioAddUpdateView = (VentanaHorarioAddUpdateController) cambiarEscena(
+                    "VentanaHorarioAddUpdate.fxml", 600, 400);
+            ventanaHorarioAddUpdateView.setDirectorEscenas(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaHorarioAddUpdate(Horario horario) {
+        try {
+            VentanaHorarioAddUpdateController ventanaHorarioAddUpdateView = (VentanaHorarioAddUpdateController) cambiarEscena(
+                    "VentanaHorarioAddUpdate.fxml", 600, 400);
+            ventanaHorarioAddUpdateView.setDirectorEscenas(this);
+            ventanaHorarioAddUpdateView.setHorarios(horario);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void mostrarVentanaClase() {
         try {
-            VentanaClaseController ventanaClaseView = 
-                    (VentanaClaseController) cambiarEscena("ClaseView.fxml", 781,519);
+            VentanaClaseController ventanaClaseView = (VentanaClaseController) cambiarEscena("ClaseView.fxml", 781,
+                    519);
             ventanaClaseView.setDirectorEscenas(this);
         } catch (Exception e) {
             e.printStackTrace();
@@ -181,8 +205,8 @@ public class App extends Application {
 
     public void mostrarVentanaClaseAddUpdate() {
         try {
-            VentanaClaseAddUpdateController ventanaClaseAddUpdate = 
-                (VentanaClaseAddUpdateController) cambiarEscena("VentanaClaseAddUpdate.fxml", 570, 545);
+            VentanaClaseAddUpdateController ventanaClaseAddUpdate = (VentanaClaseAddUpdateController) cambiarEscena(
+                    "VentanaClaseAddUpdate.fxml", 570, 545);
             ventanaClaseAddUpdate.setDirectorEscenas(this);
 
         } catch (Exception e) {
@@ -192,8 +216,8 @@ public class App extends Application {
 
     public void mostrarVentanaClaseAddUpdate(Clase clase) {
         try {
-            VentanaClaseAddUpdateController ventanaClaseAddUpdate = 
-                (VentanaClaseAddUpdateController) cambiarEscena("VentanaClaseAddUpdate.fxml", 570, 545);
+            VentanaClaseAddUpdateController ventanaClaseAddUpdate = (VentanaClaseAddUpdateController) cambiarEscena(
+                    "VentanaClaseAddUpdate.fxml", 570, 545);
             ventanaClaseAddUpdate.setDirectorEscenas(this);
             ventanaClaseAddUpdate.setClase(clase);
 
@@ -201,7 +225,6 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-   
 
     public Initializable cambiarEscena(String escena, int ancho, int alto) throws IOException {
         Initializable resultado = null;

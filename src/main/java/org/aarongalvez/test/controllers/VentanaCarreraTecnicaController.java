@@ -88,5 +88,4 @@ public class VentanaCarreraTecnicaController implements Initializable {
         }
     }
 
-
 }
