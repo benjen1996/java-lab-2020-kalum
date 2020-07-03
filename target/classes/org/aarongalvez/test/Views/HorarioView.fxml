@@ -8,27 +8,39 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.aarongalvez.test.controllers.VentanaHorarioController">
-    <children>
-        <TableView fx:id="tblHorario" layoutX="2.0" layoutY="100.0" prefHeight="200.0" prefWidth="640.0">
-            <columns>
-                <TableColumn fx:id="colHorarioInicio" prefWidth="318.0" text="Horario Inicio"/>
-                <TableColumn fx:id="ColHorarioFInal" prefWidth="321.0" text="Horario Final"/>
-            </columns>
-        </TableView>
-        <Label layoutX="2.0" prefHeight="47.0" prefWidth="133.0" text="Horario" textAlignment="CENTER">
-            <font>
-                <Font size="29.0"/>
-            </font>
-        </Label>
-        <Line endX="428.0" layoutX="215.0" layoutY="96.0" startX="-218.0" strokeWidth="8.0"/>
-        <Button layoutX="509.0" layoutY="338.0" mnemonicParsing="false" onAction="#mostrarVentanaPrincipal"
-                prefHeight="47.0" prefWidth="118.0" text="Salir">
-            <font>
-                <Font name="System Bold" size="22.0"/>
-            </font>
-        </Button>
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.aarongalvez.test.controllers.VentanaHorarioController">
+   <children>
+      <TableView fx:id="tblHorario" layoutY="100.0" prefHeight="200.0" prefWidth="640.0">
+         <columns>
+            <TableColumn fx:id="colHorarioInicio" prefWidth="291.0" text="Horario Inicio" />
+            <TableColumn fx:id="ColHorarioFInal" prefWidth="348.0" text="Horario Final" />
+         </columns>
+      </TableView>
+      <Label layoutX="4.0" layoutY="6.0" prefHeight="38.0" prefWidth="139.0" text="Horario">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Line endX="376.0" layoutX="264.0" layoutY="96.0" startX="-264.0" strokeWidth="8.0" />
+      <Button layoutX="520.0" layoutY="334.0" mnemonicParsing="false" onAction="#mostrarVentanaPrincipal" prefHeight="52.0" prefWidth="101.0" text="Salir">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="132.0" layoutY="334.0" mnemonicParsing="false" onAction="#modificar" prefHeight="52.0" prefWidth="101.0" text="Modificar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="52.0" prefWidth="101.0" text="Nuevo">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="250.0" layoutY="334.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="52.0" prefWidth="101.0" text="Eliminar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

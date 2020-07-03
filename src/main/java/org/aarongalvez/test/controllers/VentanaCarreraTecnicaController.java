@@ -67,4 +67,25 @@ public class VentanaCarreraTecnicaController implements Initializable {
         }
     }
 
+    public void eliminar() {
+        if (this.tblCareraTecnica.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Carera Tecnica");
+            alert.setHeaderText(null);
+            alert.setContentText("Debe Seleccionar un Elemento ");
+            alert.initOwner(null);
+            alert.show();
+        } else {
+            CareraTecnica careraTecnica = this.tblCareraTecnica.getSelectionModel().getSelectedItem();
+            Conexion.getInstancia().eliminar(careraTecnica);
+            this.directorEscenas.mostrarVentanaCarrera();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Carera Tecnica");
+            alert.setHeaderText(null);
+            alert.setContentText("Carrera eliminada correctamente ");
+            alert.initOwner(null);
+            alert.show();
+        }
+    }
+
 }

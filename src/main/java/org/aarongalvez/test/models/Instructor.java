@@ -17,7 +17,7 @@ import javafx.beans.property.StringProperty;
 
 @Entity
 @Table(name = "instructor")
-@NamedQueries({@NamedQuery(name = "Instructor.findAll", query = "select i from Instructor i")})
+@NamedQueries({ @NamedQuery(name = "Instructor.findAll", query = "select i from Instructor i") })
 public class Instructor implements Serializable {
 
     private final StringProperty instructorId;
@@ -79,6 +79,10 @@ public class Instructor implements Serializable {
 
     public StringProperty nombres() {
         return this.nombres;
+    }
+
+    public String toString() {
+        return this.getApellidos() + " " + this.getNombres();
     }
 
     @Column(name = "direccion")

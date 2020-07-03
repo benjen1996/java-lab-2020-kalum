@@ -64,6 +64,10 @@ public class Salon implements Serializable {
         return this.nombreSalon;
     }
 
+    public String toString() {
+        return this.getNombreSalon();
+    }
+
     @Column(name = "descripcion")
     public String getDescripcion() {
         return this.descripcion.get();

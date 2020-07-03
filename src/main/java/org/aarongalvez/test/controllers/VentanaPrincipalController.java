@@ -13,7 +13,6 @@ public class VentanaPrincipalController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
     }
 
     public void mostrarVentanaSalon() {
@@ -33,8 +32,7 @@ public class VentanaPrincipalController implements Initializable {
         this.directorEscenas.mostrarVentanaHorario();
     }
 
-    public void mostrarVentanaClase()
-    {
+    public void mostrarVentanaClase() {
         this.directorEscenas.mostrarVentanaClase();
     }
 
@@ -45,6 +43,5 @@ public class VentanaPrincipalController implements Initializable {
     public void setDirectorEscenas(App directorEscenas) {
         this.directorEscenas = directorEscenas;
     }
-
 
 }

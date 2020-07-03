@@ -14,12 +14,12 @@
         <columns>
             <TableColumn fx:id="colSalon" prefWidth="48.0" text="Salon" />
           <TableColumn fx:id="colCiclo" prefWidth="44.0" text="Ciclo" />
-          <TableColumn fx:id="colDescripcion" prefWidth="223.0" text="Descripcion" />
-            <TableColumn fx:id="colCupoMinimo" prefWidth="68.0" text="Cupo Min" />
-            <TableColumn fx:id="colCupoMaximo" prefWidth="68.0" text="Cupo Max" />
-            <TableColumn fx:id="colHorario" prefWidth="92.0" text="Horario" />
-            <TableColumn fx:id="colInstructor" prefWidth="105.0" text="Instructor" />
-            <TableColumn fx:id="colCarrera" minWidth="0.0" prefWidth="102.0" text="Carrera" />
+          <TableColumn fx:id="colDescripcion" prefWidth="213.0" text="Descripcion" />
+            <TableColumn fx:id="colCupoMinimo" prefWidth="66.0" text="Cupo Min" />
+            <TableColumn fx:id="colCupoMaximo" prefWidth="63.0" text="Cupo Max" />
+            <TableColumn fx:id="colHorario" prefWidth="114.0" text="Horario" />
+            <TableColumn fx:id="colInstructor" prefWidth="108.0" text="Instructor" />
+            <TableColumn fx:id="colCarrera" minWidth="0.0" prefWidth="113.0" text="Carrera" />
         </columns>
       </TableView>
       <Line endX="413.0" layoutX="368.0" layoutY="129.0" startX="-368.0" strokeWidth="10.0" />
@@ -33,14 +33,19 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <Button layoutX="339.0" layoutY="432.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="103.0" text="Modificar">
+      <Button layoutX="149.0" layoutY="432.0" mnemonicParsing="false" onAction="#modificar" prefHeight="49.0" prefWidth="103.0" text="Modificar">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="46.0" layoutY="432.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="103.0" text="Nuevo">
+      <Button layoutX="24.0" layoutY="432.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseAddUpdate" prefHeight="49.0" prefWidth="103.0" text="Agregar">
          <font>
-            <Font size="22.0" />
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="270.0" layoutY="432.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="49.0" prefWidth="103.0" text="Eliminar">
+         <font>
+            <Font size="16.0" />
          </font>
       </Button>
    </children>

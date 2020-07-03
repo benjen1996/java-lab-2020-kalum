@@ -12,6 +12,7 @@ import org.aarongalvez.test.models.Clase;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
@@ -65,8 +66,47 @@ public class VentanaClaseController implements Initializable {
 
     }
 
+    public void modificar() {
+        if (this.tblClases.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Clase");
+            alert.setHeaderText(null);
+            alert.setContentText("Debe Seleccionar un Elemento ");
+            alert.initOwner(null);
+            alert.show();
+        } else {
+            Clase clase = this.tblClases.getSelectionModel().getSelectedItem();
+            this.directorEscenas.mostrarVentanaClaseAddUpdate(clase);
+        }
+    }
+
+    public void eliminar() {
+        if (this.tblClases.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Clase");
+            alert.setHeaderText(null);
+            alert.setContentText("Debe Seleccionar un Elemento ");
+            alert.initOwner(null);
+            alert.show();
+        } else {
+            Clase clase = this.tblClases.getSelectionModel().getSelectedItem();
+            Conexion.getInstancia().eliminar(clase);
+            this.directorEscenas.mostrarVentanaClase();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Clase");
+            alert.setHeaderText(null);
+            alert.setContentText("Clase Eliminada correctamente ");
+            alert.initOwner(null);
+            alert.show();
+        }
+    }
+
     public void mostrarVentanaPrincipal() {
         this.directorEscenas.mostrarVentanaPrincipal();
+    }
+
+    public void mostrarVentanaClaseAddUpdate() {
+        this.directorEscenas.mostrarVentanaClaseAddUpdate();
     }
 
     public App getDirectorEscenas() {
